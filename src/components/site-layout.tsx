@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, ScanEye, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { ButtonLink } from "./button";
+import logoAsset from "../assets/thirdnetra-logo.png.asset.json";
 
 const nav = [
   ["Solutions", "/solutions"], ["Services", "/services"], ["Industries", "/industries"],
@@ -9,7 +10,7 @@ const nav = [
 ] as const;
 
 export function Brand() {
-  return <Link to="/" className="flex items-center gap-2.5 font-display text-lg font-bold tracking-tight text-foreground"><span className="grid size-9 place-items-center rounded-xl border border-primary/35 bg-primary/10 text-primary"><ScanEye className="size-5" /></span>ThirdNetra</Link>;
+  return <Link to="/" aria-label="ThirdNetra home" className="flex items-center gap-2.5"><img src={logoAsset.url} alt="ThirdNetra logo" width={160} height={48} className="h-11 w-auto" /></Link>;
 }
 
 export function Header() {
